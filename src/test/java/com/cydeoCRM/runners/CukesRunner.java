@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeoCRM/step_definitions",
         dryRun = false,
-        tags = "",
+        tags = "@B29G44-215",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
