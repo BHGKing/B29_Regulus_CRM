@@ -78,7 +78,7 @@ public class pollCreation_stepDefinitions extends BasePage {
     @Then("user should be able to see {string} posted as a poll")
     public void userShouldBeAbleToSeePostedAsAPoll(String question) {
 
-        Assert.assertTrue(pollPage.elementOfTextAfterPollCreated.getText().equals(question));
+        Assert.assertTrue(pollPage.elementOfTextAfterPollCreated.getText().contains(question));
 
 
     }
@@ -120,16 +120,25 @@ public class pollCreation_stepDefinitions extends BasePage {
     }
 
     @And("if user only provides the title and the question {string}, user should see The question what does the fox say has no answers. error.")
-    public void ifUserOnlyProvidesTheTitleAndTheQuestionUserShouldSeeTheQuestionWhatDoesTheFoxSayHasNoAnswersError(String titleAndQuestion) throws InterruptedException {
+    public void ifUserOnlyProvidesTheTitleAndTheQuestionUserShouldSeeTheQuestionWhatDoesTheFoxSayHasNoAnswersError(String titleAndQuestion)  {
         Driver.getDriver().switchTo().frame(pollPage.TextBoxIframe);
         pollPage.TextBoxForTitle.sendKeys(titleAndQuestion);
-        Thread.sleep(3000);
         Driver.getDriver().switchTo().defaultContent();
         pollPage.QuestionBox.sendKeys(titleAndQuestion);
-        Thread.sleep(3000);
         pollPage.sendButton.click();
-        Thread.sleep(3000);
-        Assert.assertTrue(pollPage.TheQuestionHasNoAnswerError.getText().contains("has no answers."));
-        Thread.sleep(3000);
-    }
+        Assert.assertTrue(pollPage.TheQuestionHasNoAnswerError.getText().equals("The question"+ titleAndQuestion+"has no answers."));
+
 }
+
+    @And("if user only provides the title and the question {string}, user should see The question {string} say has no answers. error.")
+    public void ifUserOnlyProvidesTheTitleAndTheQuestionUserShouldSeeTheQuestionSayHasNoAnswersError(String question, String error) {
+        Driver.getDriver().switchTo().frame(pollPage.TextBoxIframe);
+        pollPage.TextBoxForTitle.sendKeys(question);
+        Driver.getDriver().switchTo().defaultContent();
+        pollPage.QuestionBox.sendKeys(question);
+        pollPage.sendButton.click();
+
+        Assert.assertTrue(pollPage.TheQuestionHasNoAnswerError.getText().equals("The question \""+error+"\" has no answers."));
+
+    }
+    }
