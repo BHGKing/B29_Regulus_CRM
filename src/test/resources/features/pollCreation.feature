@@ -14,9 +14,9 @@ Feature: poll creation feature.
   Scenario:  User should be able to create a poll by adding questions and multiple answers.
     Given user is on the home page.
     Then  user clicks on poll tab at the top.
-    Then user should be able to click ask "wwwwhats does the fox sabbey"
+    Then user should be able to click ask "hai?"
     Then user should be able to provide the answers and click send.
-    Then user should be able to see "wwwwhats does the fox sabbey" posted as a poll
+    Then user should be able to see "hai?" posted as a poll
 
 
   @B29G44-212
@@ -34,4 +34,4 @@ Feature: poll creation feature.
     Then if user does no give any questionns or answers and tries to creat poll they should get The message title is not specified error.
     And if user enters question and answer wihtout selecting who to deliver to, user should see Please specify at least one person. error.
     And if user only provides title and answer but not question user should see The question text is not specified.
-    And if user only provides the title and the question "wwwwhats eeats", user should see The question "wwwwhats eeats" say has no answers. error.
+    And if user only provides the title and the question "hello", user should see The question "hello" say has no answers. error.

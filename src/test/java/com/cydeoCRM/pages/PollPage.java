@@ -17,7 +17,7 @@ public class PollPage {
     @FindBy(xpath = "//span[.='Poll']")
     public WebElement pollButton;
 
-    @FindBy(xpath ="//span[@data-type='groups']" )
+    @FindBy(xpath = "(//span[.='All employees'])[1]")
     public WebElement AllEmployeesButton;
 
 
