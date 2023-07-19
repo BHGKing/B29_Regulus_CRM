@@ -3,7 +3,10 @@ package com.cydeoCRM.step_definitions;
 import com.cydeoCRM.pages.MilenaLoginPage;
 import com.cydeoCRM.pages.MilenaProfilePage;
 import com.cydeoCRM.utilities.BrowserUtils;
+import com.cydeoCRM.utilities.ConfigurationReader;
+import com.cydeoCRM.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -19,6 +22,12 @@ public class MilenaAccessStepDef {
 
     MilenaLoginPage loginPage=new MilenaLoginPage();
     MilenaProfilePage profilePage=new MilenaProfilePage();
+
+   // @Given("the user is on the CRM login page")
+   // public void theUserIsOnTheCRMLoginPage() {
+    //    Driver.getDriver().get(ConfigurationReader.getProperty//("url"));
+   // }
+
     @When("User enter bellow correct credentials")
     public void user_enter_bellow_correct_credentials(Map<String, String>credentials) {
         loginPage.username.sendKeys(credentials.get("username"));
@@ -29,6 +38,7 @@ public class MilenaAccessStepDef {
     @When("user clicks to login button")
     public void user_clicks_to_login_button() {
         loginPage.logInButton.click();
+        BrowserUtils.sleep(2);
 
     }
 /*
@@ -43,13 +53,12 @@ public class MilenaAccessStepDef {
 
     @And("user should be able to access the profile page")
     public void userShouldBeAbleToAccessTheProfilePage() {
-
+      // BrowserUtils.verifyTitleContains("Portal");
     }
 
     @And("user click on his profile")
     public void userClickOnHisProfile() {
         loginPage.profileDropDown.click();
-
 
     }
 
@@ -70,7 +79,6 @@ public class MilenaAccessStepDef {
         String actualOptions=profilePage.options.getText();
      //  Assert.assertTrue(actualOptions.equals(expectedOptions));
 
-
     }
 
     @Then("Verify email address under the General tub")
@@ -83,4 +91,6 @@ public class MilenaAccessStepDef {
         loginPage.profileDropDown.click();
         profilePage.MyProfile.click();
     }
+
+
 }
