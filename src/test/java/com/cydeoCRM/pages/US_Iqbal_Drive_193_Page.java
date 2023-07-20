@@ -39,8 +39,8 @@ public class US_Iqbal_Drive_193_Page {
     @FindBy(xpath = "(//span[@class='main-buttons-item-text-title'])[7]")
 
     public WebElement driveCleanUpButton;
-    @FindBy(xpath = "//div[@id='top_menu_id_docs']")
-    public List <WebElement> allTopModules;
+    @FindBy(className = "main-buttons-item-text-title")
+    public List<WebElement> DriveModule;
 
 
 }
