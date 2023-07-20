@@ -16,4 +16,15 @@ public class Amin_US192_files_and_picture_upload_page {
     public WebElement Apprecition;
     @FindBy(xpath = "//span[@bx-press=\"pressOut\"]")
     public  WebElement File_upload_icon;
+    @FindBy(xpath = "(//div[@class=\"diskuf-uploader\"]/input[@class=\"diskuf-fileUploader wd-test-file-light-inp \"])[1]")
+    public WebElement Files_and_picture_upload;
+    @FindBy(xpath = "//span[@class=\"f-wrap\"]")
+    public WebElement fileType;
+    @FindBy(xpath = "//div[@id=\"microoPostFormLHE_blogPostForm\"]")
+    public WebElement textBodyBeforWritng;
+
+    @FindBy(xpath = "//span[@bx-file-is-in-text=\"N\"]")
+    public WebElement inserFileBTN;
+    @FindBy(xpath = " //span[@class=\"del-but\"]")
+    public WebElement deleteBTN;
 }
