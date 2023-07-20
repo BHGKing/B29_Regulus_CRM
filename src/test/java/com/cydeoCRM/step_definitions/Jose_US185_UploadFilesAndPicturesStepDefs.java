@@ -46,9 +46,19 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     }
 
-    @Then("the user selects {string} which file to upload")
-    public void the_user_selects_the_upload_files_and_images_button(String file) {
+   // @Then("the user selects {string} which file to upload")
+    @Then("the user selects the upload files and images button")
+    public void the_user_selects_the_upload_files_and_images_button(/*String file*/) {
 
+        String projectPath = System.getProperty("user.dir");
+
+        String filePathDOCX = "src/test/resources/filesToUpload/test.docx";
+
+        String fullPathDOCX = projectPath + "/" + filePathDOCX;
+
+        Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPathDOCX);
+
+        /*
         switch (file) {
             case "pdf":
                 filePath = ConfigurationReader.getProperty("PDFfilePath");
@@ -82,15 +92,6 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
                 break;
 
         }
-
-        /*
-        String projectPath = System.getProperty("user.dir");
-
-        String filePathDOCX = "src/test/resources/filesToUpload/test.docx";
-
-        String fullPathDOCX = projectPath + "/" + filePathDOCX;
-
-        Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPathDOCX);
 
          */
 
