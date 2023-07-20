@@ -1,4 +1,4 @@
-Feature:
+Feature: As a user, I should be able to use functions on Company Structure  under Employee menu.
 
   @B29G44-195
   Scenario: Verify "Company Structure" is displayed for HR user
