@@ -14,6 +14,9 @@ import org.junit.Assert;
 public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     Jose_UploadFilesAndPictures Jose_UploadFilesAndPictures = new Jose_UploadFilesAndPictures();
+    String projectPath = ConfigurationReader.getProperty("projectPath");;
+    String filePath;
+    String fullPath;
 
     @Given("user is on the login page of the CRM application")
     public void user_is_on_the_login_page_of_the_crm_application() {
@@ -43,9 +46,44 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     }
 
-    @Then("the user selects the upload files and images button")
-    public void the_user_selects_the_upload_files_and_images_button() {
+    @Then("the user selects {string} which file to upload")
+    public void the_user_selects_the_upload_files_and_images_button(String file) {
 
+        switch (file) {
+            case "pdf":
+                filePath = ConfigurationReader.getProperty("PDFfilePath");
+                fullPath = projectPath + "/" + filePath;
+                Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPath);
+                BrowserUtils.sleep(2);
+                break;
+            case "txt":
+                filePath = ConfigurationReader.getProperty("TXTfilePath");
+                fullPath = projectPath + "/" + filePath;
+                Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPath);
+                BrowserUtils.sleep(2);
+                break;
+            case "jpeg":
+                filePath = ConfigurationReader.getProperty("JPEGfilePath");
+                fullPath = projectPath + "/" + filePath;
+                Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPath);
+                BrowserUtils.sleep(2);
+                break;
+            case "png":
+                filePath = ConfigurationReader.getProperty("PNGfilePath");
+                fullPath = projectPath + "/" + filePath;
+                Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPath);
+                BrowserUtils.sleep(2);
+                break;
+            case "docx":
+                filePath = ConfigurationReader.getProperty("DOCXfilePath");
+                fullPath = projectPath + "/" + filePath;
+                Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPath);
+                BrowserUtils.sleep(2);
+                break;
+
+        }
+
+        /*
         String projectPath = System.getProperty("user.dir");
 
         String filePathDOCX = "src/test/resources/filesToUpload/test.docx";
@@ -53,6 +91,8 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
         String fullPathDOCX = projectPath + "/" + filePathDOCX;
 
         Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPathDOCX);
+
+         */
 
     }
 
