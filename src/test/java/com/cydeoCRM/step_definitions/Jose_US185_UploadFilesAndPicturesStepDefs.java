@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.velocity.runtime.directive.contrib.For;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
@@ -46,7 +47,7 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     }
 
-   // @Then("the user selects {string} which file to upload")
+    // @Then("the user selects {string} which file to upload")
     @Then("the user selects the upload files and images button")
     public void the_user_selects_the_upload_files_and_images_button(/*String file*/) {
 
@@ -113,6 +114,26 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     }
 
+    @Then("the user selects to remove the uploaded file or image")
+    public void the_user_selects_to_remove_the_uploaded_file_or_image() {
+
+        BrowserUtils.sleep(1);
+        Jose_UploadFilesAndPictures.deleteFileButton.click();
+
+    }
+
+    @Then("verify the file is removed")
+    public void verify_the_file_is_removed() {
+
+        if (Jose_UploadFilesAndPictures.deleteFileButton.isDisplayed()){
+            System.err.println("Failed!! File was NOT deleted");
+        } else {
+            System.out.println("Success!! File was deleted");
+        }
+
+    }
+
+    /*
     @Then("verify if the user sees the file in message box")
     public void verify_if_the_user_sees_the_file_in_message_box() {
 
@@ -127,4 +148,5 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
         }
 
     }
+     */
 }

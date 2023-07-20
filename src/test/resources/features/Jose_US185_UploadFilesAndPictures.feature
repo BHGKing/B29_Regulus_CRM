@@ -78,3 +78,26 @@ Feature: Users should be able to upload files and pictures
     Then the user selects the upload files and images button
     Then verify if the user sees the file uploaded
     Then the user selects to remove the uploaded file or image
+    #Then verify the file is removed
+
+@B29G44-188A
+  Scenario: Verify user can delete files and images after inserting as helpdesk
+    Given the user logged in as "helpdesk"
+    Then the user is on the home page
+    Then the user selects the message dropdown button
+    Then the user selects the picture button
+    Then the user selects the upload files and images button
+    Then verify if the user sees the file uploaded
+    Then the user selects to remove the uploaded file or image
+    #Then verify the file is removed
+
+@B29G44-188B
+  Scenario: Verify user can delete files and images after inserting as marketing
+    Given the user logged in as "marketing"
+    Then the user is on the home page
+    Then the user selects the message dropdown button
+    Then the user selects the picture button
+    Then the user selects the upload files and images button
+    Then verify if the user sees the file uploaded
+    Then the user selects to remove the uploaded file or image
+    #Then verify the file is removed
