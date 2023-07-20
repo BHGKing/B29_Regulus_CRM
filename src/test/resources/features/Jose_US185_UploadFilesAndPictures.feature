@@ -6,16 +6,8 @@ Feature: Users should be able to upload files and pictures
   Accounts: hr, helpdesk, marketing
   #Supported file formats .pdf, .txt, .jpeg, .png, .docx
 
-  Scenario Outline: User should be able to upload files and pictures.
+  Background: User should be able to upload files and pictures.
     Given user is on the login page of the CRM application
-
-    Examples:
-      | selectable | chosen |
-      | pdf       | pdf    |
-      | txt       | txt    |
-      | jpeg      | jpeg   |
-      | png       | png    |
-      | docx      | docx   |
 
 @B29G44-186
   Scenario: Verify user can upload as hr
