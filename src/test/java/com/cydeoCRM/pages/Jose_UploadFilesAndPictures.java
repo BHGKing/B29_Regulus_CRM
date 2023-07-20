@@ -19,6 +19,11 @@ public class Jose_UploadFilesAndPictures extends LoginPage {
     @FindBy(id = "bx-b-uploadfile-blogPostForm")
     public WebElement pictureButton;
 
-    @FindBy(className = "wd-fa-add-file-light")
+    @FindBy(xpath = "//input[@name='bxu_files[]']")
     public WebElement fileUploader;
+
+
+
+
+
 }
