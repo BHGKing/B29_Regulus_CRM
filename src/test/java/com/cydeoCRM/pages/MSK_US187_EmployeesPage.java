@@ -18,7 +18,7 @@ public WebElement employeesModule;
 
 
 
-@FindBy(xpath="//div[@id='top_menu_id_company']")
+@FindBy(className = "main-buttons-item-text-title")
     public List<WebElement> modules;
 
 @FindBy(xpath="//span[@id='pagetitle']")
