@@ -15,9 +15,12 @@ import org.openqa.selenium.By;
 public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
     Jose_UploadFilesAndPictures Jose_UploadFilesAndPictures = new Jose_UploadFilesAndPictures();
+
+    /*
     String projectPath = ConfigurationReader.getProperty("projectPath");;
     String filePath;
     String fullPath;
+     */
 
     @Given("user is on the login page of the CRM application")
     public void user_is_on_the_login_page_of_the_crm_application() {
