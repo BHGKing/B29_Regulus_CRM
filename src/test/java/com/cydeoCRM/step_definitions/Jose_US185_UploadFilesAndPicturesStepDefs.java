@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.velocity.runtime.directive.contrib.For;
+import org.junit.Assert;
 
 public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
@@ -18,21 +19,6 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
     public void user_is_on_the_login_page_of_the_crm_application() {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-
-    }
-
-    @Given("the user enters username and password for hr")
-    public void the_user_enters_username_and_password_for_hr() {
-
-        Jose_UploadFilesAndPictures.userName.sendKeys(ConfigurationReader.getProperty("hr_username"));
-        Jose_UploadFilesAndPictures.password.sendKeys(ConfigurationReader.getProperty("hr_password"));
-
-    }
-
-    @Then("user should be able to login")
-    public void user_should_be_able_to_login() {
-
-        Jose_UploadFilesAndPictures.submit.click();
 
     }
 
@@ -68,8 +54,36 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
 
         Jose_UploadFilesAndPictures.fileUploader.sendKeys(fullPathDOCX);
 
+    }
+
+    @Then("verify if the user sees the file uploaded")
+    public void verify_if_the_user_sees_the_file_uploaded() {
+
+        BrowserUtils.verifyElementDisplayed(Jose_UploadFilesAndPictures.fileUploaded);
 
     }
 
+    @Then("the user selects insert in text button")
+    public void the_user_selects_insert_in_text_button() {
 
+        BrowserUtils.sleep(1);
+
+        Jose_UploadFilesAndPictures.insertInText.click();
+
+    }
+
+    @Then("verify if the user sees the file in message box")
+    public void verify_if_the_user_sees_the_file_in_message_box() {
+
+        System.out.println(Jose_UploadFilesAndPictures.textInMessage.getText());
+
+        BrowserUtils.verifyElementDisplayed(Jose_UploadFilesAndPictures.textInMessage);
+
+        if (Jose_UploadFilesAndPictures.textInMessage.getText().equalsIgnoreCase("test.docx")){
+            System.out.println("Success!! File is displayed in message");
+        } else {
+            System.err.println("Failed!! File is NOT displayed in message");
+        }
+
+    }
 }

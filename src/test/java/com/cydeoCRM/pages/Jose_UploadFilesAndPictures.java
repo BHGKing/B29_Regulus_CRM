@@ -12,18 +12,28 @@ public class Jose_UploadFilesAndPictures extends LoginPage {
     }
 
     //Message tab element
-    @FindBy(id = "feed-add-post-form-tab-message")
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
     public WebElement messageButton;
 
     //Picture tab element
-    @FindBy(id = "bx-b-uploadfile-blogPostForm")
+    @FindBy(xpath = "//span[@id='bx-b-uploadfile-blogPostForm']")
     public WebElement pictureButton;
 
+    //Upload tab element
     @FindBy(xpath = "//input[@name='bxu_files[]']")
     public WebElement fileUploader;
 
+    //Insert tab element
+    @FindBy(xpath = "//span[@class='insert-btn']")
+    public WebElement insertInText;
 
+    //File uploaded element
+    @FindBy(xpath = "//td[@class='files-name']")
+    public WebElement fileUploaded;
 
+    //Verify file has been uploaded element
+    @FindBy(xpath = "//span[contains(@id, 'bxid')]")
+    public WebElement textInMessage;
 
 
 }
