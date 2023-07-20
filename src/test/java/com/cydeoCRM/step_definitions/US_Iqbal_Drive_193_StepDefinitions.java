@@ -28,7 +28,7 @@ public class US_Iqbal_Drive_193_StepDefinitions {
 
        // BrowserUtils.sleep(10);
         List<String> actualModules = new ArrayList<>();
-        for (WebElement eachModule : iqbalDrivePage.allTopModules) {
+        for (WebElement eachModule : iqbalDrivePage.DriveModule) {
             actualModules.add(eachModule.getText());
             // System.out.println("eachModule = " + eachModule);
 

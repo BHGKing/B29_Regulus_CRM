@@ -7,8 +7,9 @@ Feature: Default
     Given the user logged in as "helpdesk"
     When user clicks on the Drive button
     Then user should be able to see following modules
-      | My Drive            |
-      | All Documents       |
-      | Company Drive       |
-      | Sales and Marketing |
-      | More                |
+      | My Drive                   |
+      | All Documents              |
+      | Company Drive              |
+      | Sales and Marketing        |
+      | Top Management's documents |
+      | Drive Cleanup              |
