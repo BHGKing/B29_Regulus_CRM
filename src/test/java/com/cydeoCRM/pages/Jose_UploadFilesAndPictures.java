@@ -35,6 +35,7 @@ public class Jose_UploadFilesAndPictures extends LoginPage {
     @FindBy(xpath = "//span[contains(@id, 'bxid')]")
     public WebElement textInMessage;
 
+    //Button to delete file
     @FindBy(xpath = "//span[@class='del-but']")
     public WebElement deleteFileButton;
 
