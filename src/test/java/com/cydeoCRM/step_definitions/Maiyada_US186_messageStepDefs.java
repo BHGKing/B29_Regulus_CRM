@@ -48,7 +48,7 @@ public class Maiyada_US186_messageStepDefs {
     @Then("the user should be able to add the link and associate it with the text")
     public void theUserShouldBeAbleToAddTheLinkAndAssociateItWithTheText() {
         messagePage.linkTxt.sendKeys("Google");
-        messagePage.linkUrl.sendKeys("www.google.com");
+        messagePage.linkUrl.sendKeys("https://www.google.com/");
         messagePage.saveBtn.click();
         messagePage.sendBtn.click();
     }
@@ -61,7 +61,7 @@ public class Maiyada_US186_messageStepDefs {
     @Then("the user should be able to navigate to the correct URL")
     public void theUserShouldBeAbleToNavigateToTheCorrectURL() {
         BrowserUtils.switchToWindow("Google");
-        BrowserUtils.verifyTitleContains("Google");
+       BrowserUtils.verifyTitleContains("Google");
     }
 
     @Given("the link is opened")
@@ -71,8 +71,10 @@ public class Maiyada_US186_messageStepDefs {
 
     @Then("user should be able to see it open in a new tab")
     public void userShouldBeAbleToSeeItOpenInANewTab() {
+
         BrowserUtils.switchToWindow("Google");
-        BrowserUtils.verifyTitleContains("Google");
+
+      BrowserUtils.verifyTitleContains("Google");
     }
 
 }
