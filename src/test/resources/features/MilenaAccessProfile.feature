@@ -1,3 +1,4 @@
+@regression
 @B29G44-183 @wip
 Feature: Accessing my profile page functionality
   User story: As a user, I want to access my profile page.
