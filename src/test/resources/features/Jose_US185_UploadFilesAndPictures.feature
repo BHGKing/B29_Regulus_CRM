@@ -1,3 +1,4 @@
+@regression
 @B29G44-185
 Feature: Users should be able to upload files and pictures
 
