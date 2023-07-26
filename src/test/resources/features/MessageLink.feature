@@ -1,3 +1,5 @@
+@regression
+
 @B29G44-184
 Feature: As a user, I should be able to send messages by clicking on Message tab under Activity Stream.
 
