@@ -1,5 +1,11 @@
-@B29G44-201
+@regression
 Feature: Default
+
+	US: As a user, I should be able to add link in message.
+
+	AC1: User should be able to attach a link to the specified text.
+	AC2: By clicking on the link user should be able to navigate to the correct URL.
+	AC3: Link should open in a new tab
 
 	Background:
 		Given User is on the CRM login page

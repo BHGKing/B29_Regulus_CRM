@@ -30,8 +30,9 @@ public class Maiyada_US186_MessagePage extends LoginPage {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendBtn;
 
-    @FindBy(xpath = "//a[normalize-space()='google']")
+    @FindBy(xpath = "//a[text()='Google']")
     public WebElement feed;
+
 }
 
 
