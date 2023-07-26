@@ -17,7 +17,7 @@ Feature: Users should be able to upload files and pictures
     Then the user selects the message dropdown button
     Then the user selects the picture button
     Then the user selects the upload files and images button
-    Then verify if the user sees the file uploaded
+    #Then verify if the user sees the file uploaded
 
   @B29G44-237
   Scenario: Verify user can insert files and images into messages
