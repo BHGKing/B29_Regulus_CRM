@@ -23,10 +23,6 @@ public class MilenaAccessStepDef {
     MilenaLoginPage loginPage=new MilenaLoginPage();
     MilenaProfilePage profilePage=new MilenaProfilePage();
 
-   // @Given("the user is on the CRM login page")
-   // public void theUserIsOnTheCRMLoginPage() {
-    //    Driver.getDriver().get(ConfigurationReader.getProperty//("url"));
-   // }
 
     @When("User enter bellow correct credentials")
     public void user_enter_bellow_correct_credentials(Map<String, String>credentials) {
@@ -41,16 +37,6 @@ public class MilenaAccessStepDef {
         BrowserUtils.sleep(2);
 
     }
-/*
-    @When("user should be able to access the profile page")
-    public void user_should_be_able_to_access_the_profile_page() {
-
-    }
-
-
- */
-
-
     @And("user should be able to access the profile page")
     public void userShouldBeAbleToAccessTheProfilePage() {
       // BrowserUtils.verifyTitleContains("Portal");
