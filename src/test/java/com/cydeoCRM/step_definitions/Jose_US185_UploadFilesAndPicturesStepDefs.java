@@ -104,6 +104,8 @@ public class Jose_US185_UploadFilesAndPicturesStepDefs{
     @Then("verify if the user sees the file uploaded")
     public void verify_if_the_user_sees_the_file_uploaded() {
 
+        BrowserUtils.sleep(2);
+
         BrowserUtils.verifyElementDisplayed(Jose_UploadFilesAndPictures.fileUploaded);
 
     }
