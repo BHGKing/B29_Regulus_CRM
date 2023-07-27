@@ -1,3 +1,4 @@
+@regression
 @B29G44-185
 Feature: Users should be able to upload files and pictures
 
@@ -9,7 +10,7 @@ Feature: Users should be able to upload files and pictures
   Background: User should be able to upload files and pictures.
     Given user is on the login page of the CRM application
 
-@B29G44-235
+@test
   Scenario: Verify user can upload files and pictures
     Given the user logged in as "hr"
     Then the user is on the home page

@@ -56,14 +56,12 @@ public class MilenaAccessStepDef {
 
     @Then("user should be able to see the following options on the profile page")
     public void user_should_be_able_to_see_the_following_options_on_the_profile_page(List<String>expectedOptions) {
-        System.out.println("expectedOptions = " + expectedOptions);
-        // List<String> actualOptions=new ArrayList<>();
-
-        // for(WebElement each :profilePage.options ){
-         //    actualOptions.add(each.getText());
-        // }
-        String actualOptions=profilePage.options.getText();
-     //  Assert.assertTrue(actualOptions.equals(expectedOptions));
+        List<String> actualOptions=new ArrayList<>();
+        for(WebElement each :profilePage.options ){
+             actualOptions.add(each.getText());
+         }
+       // String actualOptions=profilePage.options.getText();
+       Assert.assertEquals(actualOptions,expectedOptions);
 
     }
 
