@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EmployeePage {
+public class Meryem_US188_EmployeePage {
 
-    public EmployeePage() {
+    public Meryem_US188_EmployeePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
