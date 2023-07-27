@@ -10,7 +10,7 @@
 
 @B29G44-244
     Scenario: Verify user should be able to send an appreciation by filling in the mandatory fields.
-      When User click on More tab
+      When User click on more tab
       And User click on Appreciation option under the More tab
       Then User should be able to send an appreciation by filling in the mandatory fields.
 
